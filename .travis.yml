@@ -8,15 +8,3 @@ before_install:
 script:
   - docker run -e CI=true courtvision/docker-react npm run test
 
-deploy:
-  provider: elasticbeanstalk
-  region: "sa-east-1"
-  app: "react-frontend"
-  env: "ReactFrontend-env"
-  bucket_name: "elasticbeanstalk-sa-east-1-643636865452"
-  bucket_path: "react-frontend"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: $AWS_SECRET_KEY
